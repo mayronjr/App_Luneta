@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Dimensions, YellowBox, AsyncStorage} from 'react-native';
+import { StyleSheet, View, Dimensions, YellowBox, AsyncStorage, Image} from 'react-native';
 import FirebaseService from './Components/FirebaseService'
 
 import SearchModule from './Components/SearchModule'
@@ -38,7 +38,6 @@ class Home_Screen extends Component {
     await FirebaseService.getAllNoticiaData((dataReceived) =>{this.setState({Noticias: dataReceived})})
   }
   render(){
-    var {width, height} = Dimensions.get('window');
     return (
       <View style={styles.container}>
         <SearchModule

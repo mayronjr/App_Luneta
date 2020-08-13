@@ -66,6 +66,26 @@ class Reader_Screen extends Component {
                     await FirebaseService.downloadImage(dataReceived.Conteudo[i].cont, (url)=>{
                         dataReceived.Conteudo[i].cont = url
                     })
+                    await Image.getSize(dataReceived.Conteudo[i].cont,
+                        (wid, hei)=>{
+                            dataReceived.Conteudo[i]['size'] = {
+                                width: wid,
+                                height: hei
+                            }
+                        },
+                        ()=>{console.log("falhou")}
+                    )
+                }
+                if(dataReceived.Conteudo[i].type === 2){
+                    await Image.getSize(dataReceived.Conteudo[i].cont,
+                        (wid, hei)=>{
+                            dataReceived.Conteudo[i]['size'] = {
+                                width: wid,
+                                height: hei
+                            }
+                        },
+                        ()=>{console.log("falhou")}
+                    )
                 }
             }
             this.setState(dataReceived)
@@ -98,29 +118,38 @@ class Reader_Screen extends Component {
                         }
                     }
                     if(paragrafo.type === 0){
+                        let new_height = ((paragrafo.size.height*(width - 40)) / paragrafo.size.width)
                         return(
                             <View key={index}>
-                                <Text style={{color: 'red', fontWeight: 'bold'}}>Devido a erros não identificados, as imagens carregados do banco de dados não estão a ser exibidos</Text>
-                                <Image source={{uri: paragrafo.cont}}/>
+                                <Image
+                                    source={{uri: paragrafo.cont}}
+                                    style={{width: width, height: new_height}}
+                                />
                                 <Text style={styles.Datas}>{paragrafo.legenda}</Text>
                             </View>
                         )
                     }
                     if(paragrafo.type === 2){
+                        let new_height = ((paragrafo.size.height*(width - 40)) / paragrafo.size.width)
                         return(
                             <View key={index}>
-                                <Text style={{color: 'red', fontWeight: 'bold'}}>Devido a erros não identificados, as imagens carregados da internet não estão a ser exibidos</Text>
-                                <Image source={{uri: paragrafo.cont}}/>
+                                <Image
+                                    source={{uri: paragrafo.cont}}
+                                    style={{width: width, height: new_height}}
+                                />
                                 <Text style={styles.Datas}>{paragrafo.legenda}</Text>
                             </View>
                         )
                     }
                     if(paragrafo.type === 3){
-                        console.log("Link de video", paragrafo)
                         return(
                             <View key={index}>
                                 <WebView
-                                    style={ {  marginTop: (Platform.OS == 'ios') ? 20 : 0,} }
+                                    style={{
+                                        marginTop: (Platform.OS == 'ios') ? 20 : 0,
+                                        width: width,
+                                        height: 200
+                                    }}
                                     javaScriptEnabled={true}
                                     domStorageEnabled={true}
                                     source={{uri: paragrafo.cont }}

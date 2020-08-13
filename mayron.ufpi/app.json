@@ -4,7 +4,7 @@
     "slug": "mayron.ufpi",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Luneta.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
