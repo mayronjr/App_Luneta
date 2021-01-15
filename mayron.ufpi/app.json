@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "Luneta",
-    "slug": "mayron.ufpi",
-    "version": "1.0.0",
+    "slug": "mayron_ufpi_luneta",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/Luneta.png",
     "splash": {
@@ -21,6 +21,20 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "description": "Um aplicativo para os cursos de Comunicação Social e de Jornalismo da UFPI.",
+    "githubUrl": "https://github.com/mayronjr/App_Luneta/tree/master/mayron.ufpi",
+    "android": {
+      "package": "com.mayronjr.mayron_ufpi_luneta"
     }
+  },
+  "ios": {
+    "bundleIdentifier": "com.mayron.ufpi.luneta",
+    "buildNumber": "1.0.0"
+  },
+  "android": {
+    "package": "com.mayron.ufpi.luneta",
+    "versionCode": 2,
+    "permissions": []
   }
 }
