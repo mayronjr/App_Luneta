@@ -30,7 +30,8 @@
   },
   "ios": {
     "bundleIdentifier": "com.mayron.ufpi.luneta",
-    "buildNumber": "1.0.0"
+    "buildNumber": "1.0.0",
+    "permissions": []
   },
   "android": {
     "package": "com.mayron.ufpi.luneta",
