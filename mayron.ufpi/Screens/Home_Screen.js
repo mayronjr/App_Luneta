@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Dimensions, YellowBox, AsyncStorage, Image} from 'react-native';
+import { StyleSheet, View, LogBox, AsyncStorage } from 'react-native';
 import FirebaseService from './Components/FirebaseService'
 
 import SearchModule from './Components/SearchModule'
@@ -7,7 +7,7 @@ import NoticiaModule from './Components/NoticiaModule'
 
 
 /*eslint-disable*/
-YellowBox.ignoreWarnings(['Setting a timer'])
+LogBox.ignoreLogs(['Setting a timer'])
 
 class Home_Screen extends Component {
   state ={

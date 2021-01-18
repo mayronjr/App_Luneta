@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {WebView} from 'react-native-webview';
-import { StyleSheet, View, Text, Dimensions, ScrollView, Image, YellowBox, AsyncStorage} from 'react-native';
+import { StyleSheet, View, Text, Dimensions, ScrollView, Image, LogBox, AsyncStorage} from 'react-native';
 import FirebaseService from './Components/FirebaseService'
 
 import findTags from './Components/findTags'
@@ -9,7 +9,7 @@ import Node from './Components/Node'
 var {width, height} = Dimensions.get('window');
 
 /*eslint-disable*/
-YellowBox.ignoreWarnings(['Setting a timer'])
+LogBox.ignoreLogs(['Setting a timer'])
 
 function isArray (value) {
     return value && typeof value === 'object' && value.constructor === Array;

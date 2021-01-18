@@ -2,7 +2,7 @@
   "expo": {
     "name": "Luneta",
     "slug": "mayron_ufpi_luneta",
-    "version": "1.1.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/Luneta.png",
     "splash": {
@@ -30,12 +30,11 @@
   },
   "ios": {
     "bundleIdentifier": "com.mayron.ufpi.luneta",
-    "buildNumber": "1.0.0",
-    "permissions": []
+    "buildNumber": "1.0.0"
   },
   "android": {
     "package": "com.mayron.ufpi.luneta",
-    "versionCode": 2,
+    "versionCode": 1,
     "permissions": []
   }
 }
